@@ -1,13 +1,15 @@
 :root {
-  --bg: #080b12;
-  --panel: rgba(255, 255, 255, 0.075);
-  --panel-strong: rgba(255, 255, 255, 0.13);
-  --text: #f7f8fb;
-  --muted: #aeb6c7;
-  --line: rgba(255, 255, 255, 0.12);
-  --accent: #8dd8ff;
-  --accent-2: #d7b4ff;
-  --shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
+  --bg: #f5f7fb;
+  --paper: #ffffff;
+  --panel: rgba(255, 255, 255, 0.78);
+  --text: #121826;
+  --muted: #667085;
+  --line: rgba(18, 24, 38, 0.11);
+  --accent: #1864ff;
+  --accent-2: #7c3aed;
+  --soft-blue: #edf4ff;
+  --soft-purple: #f4efff;
+  --shadow: 0 24px 70px rgba(16, 24, 40, 0.12);
 }
 
 * {
@@ -25,9 +27,9 @@ body {
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(141, 216, 255, 0.17), transparent 32rem),
-    radial-gradient(circle at bottom right, rgba(215, 180, 255, 0.14), transparent 34rem),
-    linear-gradient(135deg, #080b12 0%, #101522 50%, #080b12 100%);
+    radial-gradient(circle at top left, rgba(24, 100, 255, 0.12), transparent 31rem),
+    radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.10), transparent 34rem),
+    linear-gradient(135deg, #ffffff 0%, #f5f7fb 44%, #eef4ff 100%);
 }
 
 .topbar {
@@ -39,7 +41,7 @@ body {
   justify-content: space-between;
   gap: 1.25rem;
   padding: 1rem clamp(1rem, 5vw, 4.5rem);
-  background: rgba(8, 11, 18, 0.72);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -60,8 +62,8 @@ body {
   place-items: center;
   font-weight: 900;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #07101a;
-  box-shadow: 0 10px 30px rgba(141, 216, 255, 0.22);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(24, 100, 255, 0.22);
 }
 
 .brand strong,
@@ -86,24 +88,27 @@ body {
 .menu-toggle,
 .secondary-link {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(255, 255, 255, 0.8);
   color: var(--text);
   border-radius: 999px;
   padding: 0.7rem 0.95rem;
   cursor: pointer;
-  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+  transition: 0.18s ease;
 }
 
 .nav-link:hover,
 .secondary-link:hover,
 .menu-toggle:hover {
   transform: translateY(-1px);
-  background: var(--panel-strong);
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(16, 24, 40, 0.08);
 }
 
 .nav-link.active {
-  background: linear-gradient(135deg, rgba(141,216,255,0.28), rgba(215,180,255,0.2));
-  border-color: rgba(141,216,255,0.55);
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+  box-shadow: 0 12px 30px rgba(24, 100, 255, 0.2);
 }
 
 .menu-toggle {
@@ -122,10 +127,10 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 34px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.76), rgba(0,0,0,0.35), rgba(0,0,0,0.72)),
-    var(--hero-image, linear-gradient(135deg, #172038, #0d111a));
+    linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.74), rgba(255,255,255,0.36)),
+    var(--hero-image, linear-gradient(135deg, #ffffff, #edf4ff));
   background-size: cover;
   background-position: center;
   display: grid;
@@ -141,8 +146,8 @@ main {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 25% 20%, rgba(141,216,255,0.24), transparent 24rem),
-    linear-gradient(0deg, rgba(8,11,18,0.84), transparent 60%);
+    radial-gradient(circle at 22% 18%, rgba(24,100,255,0.13), transparent 24rem),
+    linear-gradient(0deg, rgba(255,255,255,0.68), transparent 64%);
   pointer-events: none;
 }
 
@@ -157,7 +162,7 @@ main {
   height: 92px;
   object-fit: contain;
   margin: 0.8rem 0 1rem;
-  filter: drop-shadow(0 14px 30px rgba(0,0,0,0.38));
+  filter: drop-shadow(0 14px 22px rgba(16,24,40,0.14));
 }
 
 .eyebrow {
@@ -165,7 +170,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .hero h1 {
@@ -174,6 +179,7 @@ main {
   line-height: 0.92;
   letter-spacing: -0.07em;
   margin-bottom: 1.1rem;
+  color: #0b1220;
 }
 
 .hero-meta {
@@ -188,10 +194,11 @@ main {
   align-items: center;
   gap: 0.45rem;
   padding: 0.62rem 0.85rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(16, 24, 40, 0.11);
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.28);
-  color: #eef3fb;
+  background: rgba(255, 255, 255, 0.78);
+  color: #1d2939;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
 }
 
 .hero-actions {
@@ -203,12 +210,13 @@ main {
 
 .primary-link {
   display: inline-flex;
-  color: #06101a;
+  color: #ffffff;
   font-weight: 850;
   text-decoration: none;
   border-radius: 999px;
   padding: 0.78rem 1rem;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 14px 30px rgba(24, 100, 255, 0.18);
 }
 
 .secondary-link {
@@ -219,10 +227,11 @@ main {
   justify-self: end;
   width: 100%;
   padding: 1.25rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(16, 24, 40, 0.10);
   border-radius: 24px;
-  background: rgba(8, 11, 18, 0.58);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.09);
 }
 
 .next-card span {
@@ -234,6 +243,7 @@ main {
 .next-card strong {
   font-size: 2rem;
   line-height: 1;
+  color: #0b1220;
 }
 
 .next-card p {
@@ -250,11 +260,21 @@ main {
 }
 
 .summary-card {
+  text-align: left;
+  cursor: pointer;
   padding: 1rem;
   min-height: 118px;
   border: 1px solid var(--line);
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.76);
   border-radius: 22px;
+  color: var(--text);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+  transition: 0.18s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(16, 24, 40, 0.10);
 }
 
 .summary-card span {
@@ -278,7 +298,8 @@ main {
   border: 1px solid var(--line);
   border-radius: 30px;
   padding: clamp(1rem, 4vw, 1.5rem);
-  background: rgba(255, 255, 255, 0.045);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 50px rgba(16, 24, 40, 0.06);
 }
 
 .section-heading {
@@ -292,6 +313,7 @@ main {
 .section-heading h2 {
   font-size: clamp(2rem, 4vw, 3.5rem);
   letter-spacing: -0.05em;
+  color: #0b1220;
 }
 
 .tools {
@@ -304,11 +326,12 @@ main {
 input,
 select {
   color: var(--text);
-  background: rgba(0,0,0,0.22);
+  background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 0.8rem 0.9rem;
   outline: none;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.04);
 }
 
 option {
@@ -342,33 +365,36 @@ option {
   padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.058);
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.055);
 }
 
 .date-box {
   min-height: 74px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, var(--soft-blue), var(--soft-purple));
   display: grid;
   place-items: center;
   text-align: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(24, 100, 255, 0.11);
 }
 
 .date-box strong {
   font-size: 1.6rem;
+  color: #0b1220;
 }
 
 .date-box span {
-  color: var(--muted);
+  color: var(--accent);
   text-transform: uppercase;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .fixture-main h3 {
   font-size: 1.12rem;
   margin-bottom: 0.3rem;
+  color: #101828;
 }
 
 .fixture-main p {
@@ -384,9 +410,9 @@ option {
 }
 
 .fixture-tags span {
-  color: #dbefff;
-  border: 1px solid rgba(141,216,255,0.24);
-  background: rgba(141,216,255,0.08);
+  color: #1d4ed8;
+  border: 1px solid rgba(24,100,255,0.18);
+  background: rgba(24,100,255,0.07);
   border-radius: 999px;
   padding: 0.34rem 0.55rem;
   font-size: 0.78rem;
@@ -428,7 +454,7 @@ option {
     padding: 1rem;
     border: 1px solid var(--line);
     border-radius: 24px;
-    background: rgba(8, 11, 18, 0.94);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(18px);
     justify-content: flex-start;
   }
