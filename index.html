@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixtureHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" data-filter="All" aria-label="FixtureHub home">
+      <span class="brand-mark">FH</span>
+      <span>
+        <strong>FixtureHub</strong>
+        <small>Your personal sports calendar</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+    <nav class="nav" id="nav">
+      <button class="nav-link active" data-filter="All">Home</button>
+      <button class="nav-link" data-filter="West Ham">West Ham</button>
+      <button class="nav-link" data-filter="Leinster">Leinster</button>
+      <button class="nav-link" data-filter="Darts">Darts</button>
+      <button class="nav-link" data-filter="Formula 1">Formula 1</button>
+      <button class="nav-link" data-filter="All Fixtures">All Fixtures</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow" id="heroEyebrow">Next Up</p>
+        <img class="hero-logo" id="heroLogo" src="" alt="" />
+        <h1 id="heroTitle">Loading fixtures...</h1>
+
+        <div class="hero-meta" id="heroMeta"></div>
+
+        <div class="hero-actions">
+          <a class="primary-link" id="heroLink" href="#" target="_blank" rel="noreferrer">Open official info</a>
+          <button class="secondary-link" id="jumpToCalendar">View calendar</button>
+        </div>
+      </div>
+
+      <aside class="next-card">
+        <span>Countdown</span>
+        <strong id="countdown">Checking date...</strong>
+        <p id="nextDetail">Finding your next sporting event.</p>
+      </aside>
+    </section>
+
+    <section class="summary-strip" id="summaryStrip"></section>
+
+    <section class="calendar-section" id="calendar">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Calendar</p>
+          <h2 id="calendarTitle">Upcoming Fixtures</h2>
+        </div>
+        <div class="tools">
+          <input type="search" id="searchInput" placeholder="Search fixtures..." />
+          <select id="monthFilter" aria-label="Filter by month">
+            <option value="all">All months</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calendar-list" id="fixtureList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built with CSV data now. APIs later.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
